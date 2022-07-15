@@ -16,7 +16,7 @@
 </head>
 <body>
     <h1>Olá Mundo!</h1>
-    
+    <p id="calculo">Olá denovo :)</p>
     <script>
     /*var nome = window.prompt('Qual é o seu nome?');
     var sobrenome = window.prompt('Qual é o seu sobrenome?')
@@ -24,12 +24,20 @@
 
     window.alert("Olá "+nome+" "+sobrenome+", seja bem vindo! Você tem"+idade+" anos"); //Contatenação*/
 
-    var num1 = window.prompt('Numero 1');
+    /*var num1 = window.prompt('Numero 1');
     var num2 = window.prompt('Numero 2');
     var soma = Number.parseInt(num1) + Number.parseInt(num2);
-    window.alert("Soma dos números é "+soma);
+    window.alert(`A soma entre ${num1} e ${num2} é igual a ${soma}`);*/
+    
 
+    var ling = "Massaru miamoto";
+    var salario = 1540.5;
+    
+    document.write(`<h2>Estou aprendendo ${ling.toLowerCase()} ` + ling.length.toFixed(8).replace('5','oigutao') + `</h2><br>`);
+    document.write(`<h2>${ling.toUpperCase()}</h2>`);
+    document.write(`<h3>${ling.toLowerCase()}</h2>`);
 
+    document.write(`<h2>${salario.toLocaleString('pt-BR' , {style: 'currency' , currency: 'BRL'})}`)
     </script>   
 </body>
 </html>
