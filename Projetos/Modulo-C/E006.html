@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        body {
+            background-color: blueviolet;
+            color: white;
+            font: normal 16pt Arial;
+        }
+
+        div#area {
+            background-color: blue;
+            text-align: center;
+            line-height: 200px;
+            width: 200px;
+            height: 200px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Eventos DOM</h1>
+    <div id="area">
+        <p>Interaja...</p>
+    </div>
+
+    <script>
+        var n = 0
+        var a = document.getElementById("area");
+
+        a.addEventListener('click', clicar);
+        a.addEventListener('mouseenter' , entrou);
+        function clicar() {
+            
+            n+=20;
+            if(n>=255) {
+                n = 0;
+            }
+            document.getElementById("area").style.backgroundColor = `rgb(255,${n},0)`;
+
+            document.querySelector("div#area>p").innerHTML = "Clicou!!"
+        }
+
+        function entrou() {
+            document.getElementById("area").style.backgroundColor = `rgb(255,${n},0)`;
+        }
+    </script>
+</body>
+</html>
