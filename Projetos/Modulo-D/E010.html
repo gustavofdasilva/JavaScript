@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condição Composta</title>
+    <style>
+        body {
+            background-color: blueviolet;
+            color: white;
+            text-align: center;
+        }
+
+        input {
+            border: 1px solid black;
+        }
+
+        div {
+            display: block;
+            width: 98vw;
+            text-align: center;
+            background-color: aquamarine;
+            margin: auto;
+            color: black;
+            padding: 20px 0 20px 0;
+            box-shadow: 3px 3px 0px black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Brasileiro ou entrangeiro 😡</h1>
+    <p>
+        <label for="iden">Onde você nasceu?: </label>
+        <input type="text" name="iden" id="iden">
+        <input type="button" value="Enviar" onclick="verificar()">
+        <div id="res"></div>
+
+        <script>
+            var identidade;
+            var res = document.getElementById("res");
+
+            function verificar() {
+                Eidentidade = document.getElementById("iden");
+                iden = Eidentidade.value;
+
+                res.innerHTML = `Você nasceu no(a) ${iden}`
+                /*if(iden.toLowerCase() == "brasil") {
+                    res.innerHTML += "<br>Você é brasileiro😎"
+                } else {
+                    res.innerHTML += "<br>Você é estrangeiro😪"
+                }*/
+
+                switch(iden.toLowerCase()) {
+                    case "brasil":
+                        res.innerHTML += "<br>Você é brasileiro😎"
+                        break
+                    
+                    case "frança":
+                        res.innerHTML += "<br>Você é estrangeiro francês oi";
+                        break
+
+                    default: 
+                        res.innerHTML += "<br>Estrangeiro!"
+                        break
+                        
+                }
+            }
+            
+        </script>
+    </p>
+</body>
+</html>
