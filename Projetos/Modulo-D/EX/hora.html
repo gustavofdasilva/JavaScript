@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do dia</title>
+    <style>
+        body {
+            background-color: blue;
+        }
+
+        header {
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            padding-bottom: 40px;
+            text-align: center;
+            margin: auto;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.493);
+            width: 70vw;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        main>img {
+            width: 300px;
+            border-radius: 50%;
+            height: 300px;
+        }
+
+        footer {
+            color: white;
+            text-align: center;
+            font-size: 13px;
+
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Hora do dia</h1></header>
+    <main>
+        <p id="hora">--Horario--</p>
+        <img src="./imagens-hora/manha.jpg" id="imagem">
+    </main>
+    <footer><p>Desenvolvido por Gustavo F. Silva</p></footer>
+
+    <script>
+        var imagem = document.getElementById("imagem");
+        var horario = document.getElementById("hora");
+        var bg = document.querySelector("body");
+        var horas = new Date().getHours();
+
+        horario.innerHTML = `Agora são ${horas}h`;
+        if(horas>0 && horas <12) { //manha
+            imagem.src = "./imagens-hora/manha.jpg";
+            bg.style.backgroundColor = "rgb(83, 147, 219)";
+            horario.innerHTML += "<br>Bom dia!";
+        } else if (horas>=12 && horas<18) { //tarde
+            imagem.src = "./imagens-hora/tarde.jpg";
+            bg.style.backgroundColor = "rgb(196, 154, 39)";
+            horario.innerHTML += "<br>Boa tarde!";
+        } else {
+            imagem.src = "./imagens-hora/noite.jpg";
+            bg.style.backgroundColor = "rgb(37, 27, 125)";
+            horario.innerHTML += "<br>Boa noite!";
+        }
+
+    </script>
+</body>
+</html>
