@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hora do dia</title>
+    <title>Contador</title>
     <style>
         body {
             background-color: rgb(34, 146, 90);
@@ -75,39 +75,43 @@
     </main>
     <footer><p>Desenvolvido por Gustavo F. Silva</p></footer>
     <script>
-        var Estart = document.getElementById("inicio");
-        var Eend = document.getElementById("fim");
-        var Estep = document.getElementById("passo");
-        var res = document.getElementById("res");
+        
         function calcular() {
             var Estart = document.getElementById("inicio");
             var Eend = document.getElementById("fim");
             var Estep = document.getElementById("passo");
             var res = document.getElementById("res");
 
-            if(
-                Estart.value == "" ||
-                Eend.value == "" ||                   
-                Estep.value == "" ||
+            if(Estep.value <= 0 || Estep.value>Eend.value) {
+                window.alert("Número passo foi inválido! Alterando para 1...")
+                Estep.value = 1;
+            }
 
-                Estart.value >= Eend.value ||
-                Estep.value>Eend.value
-
-                ) {
-                window.alert("Impossível calcular!");
-                window.alert(`${Estart.value}, ${Eend.value}, ${Estep.value}`);
+            if(Estart.value == "" || Eend.value == "" || Estep.value == "") {
+                window.alert("Insira os valores");
             } else {
                 res.innerHTML = "<strong>Contando!<strong>"
-                for(var n = Number(Estart.value) ; n <= Number(Eend.value) ; n+=Number(Estep.value)) { 
-                    res.innerHTML += 
-                    `
-                    👉
-                    ${n}
-                    `;
+                if(Number(Estart.value) < Number(Eend.value)) { // Contagem crescente
+                    for(var n = Number(Estart.value) ; n <= Number(Eend.value) ; n+=Number(Estep.value)) { 
+                        res.innerHTML += 
+                        `
+                        ${n}
+                        \u{1F449}
+                        `;
+                    }
+                } else { // Contagem decrescente
+                    for(var n = Number(Estart.value) ; n >= Number(Eend.value) ; n-=Number(Estep.value)) {
+                        res.innerHTML += 
+                        `
+                        ${n}
+                        \u{1F449}
+                        `;
+                        }
                 }
-                res.innerHTML += `🏁`;
+                res.innerHTML += `\u{1F3C1}`;
             }
         }
+    
 
         
 

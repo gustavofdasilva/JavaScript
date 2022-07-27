@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        body {
+            background-color: rgb(146, 34, 34);
+        }
+
+        header {
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+        }
+
+        main {
+            padding: 40px;
+            margin: auto;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.493);
+            text-align: center;
+            width: 70%;
+        }
+
+
+        footer {
+            color: white;
+            text-align: center;
+            font-size: 13px;
+
+        }
+
+        main>p>input#botao{
+            width: 30%;
+            background-color: rgb(158, 57, 26);
+            color: white;
+            font-weight: bolder;
+            border: none;
+            border-radius: 5px;
+            padding: 6px;
+            margin: 20px 0 20px 0;
+            transition: 0.5s;
+        }
+            main>p>input#botao:hover{
+                background-color: rgb(199, 117, 62);
+                transition: 0.5s;
+            }
+        
+        main>select {
+            width: 100%;
+        }
+
+        main>select>option{
+            padding: 5px;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <header><h1>Tabuada</h1></header>
+    <main>
+        <p>
+            <label for="num"><strong>Número: </strong></label>
+            <input type="number" name="num" id="num">
+            <input type="button" value="Calcular" id="botao" onclick="calcular()">
+        </p>
+        <select name="tab" id="tab" size="10">
+            
+        </select>
+    </main>
+    <footer><p>Desenvolvido por Gustavo F. Silva</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>
