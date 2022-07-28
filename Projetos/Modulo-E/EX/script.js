@@ -4,6 +4,7 @@ var EachRes
 
 function calcular() {
     area.innerHTML = "";
+    
     if(num.value == ""){
         alert("Impossível calcular!");
     } else {
