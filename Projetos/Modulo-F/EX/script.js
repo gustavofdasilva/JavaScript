@@ -4,13 +4,20 @@ var areaResult = document.getElementById("AreaR");
 var counter = 0;
 
 
+function inList(number, array) {
+    if (array.indexOf(Number(number)) != -1) {
+        return false
+    } else {
+        return true
+    }
+}
+
 function getNumber() {
     
     area = document.querySelector("select");
     var Enum = document.getElementById("num");
     var num = Number(Enum.value);
-
-    if(num>=1 && num<=100) {
+    if(num>=1 && num<=100 && inList(num,dados)) {
         areaResult.innerHTML="";
         dados.push(num);
         
@@ -65,3 +72,4 @@ function result() {
         window.alert("Insira os valores!");
     }
 }
+
