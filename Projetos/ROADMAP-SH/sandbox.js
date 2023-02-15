@@ -1,5 +1,4 @@
-
-
+"use strict";
 function checkAge(age) {
     if (age > 18) {
         return true;
@@ -23,12 +22,15 @@ function min(a,b) {
     return (a<b) ? a : b;
 }
 
-function pow(x,n) {
-    let result = 0;
-    for(let i = 0;i<n;i++) {
-        result += x*x;
-    }
-    return result;
-}
+let sum = (a,b) => a+b;
+console.log(sum(2,3));
 
-console.log(pow(3,2));
+let age = 19;
+
+let welcome = (age < 18) ?
+    n => console.log(`Sorry... not for you number ${n}`) :
+    n => console.log(`Greetings! Number ${n}`);
+
+
+
+
